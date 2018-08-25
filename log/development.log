@@ -189,3 +189,580 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 138ms (Views: 114.7ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/users/new" for 127.0.0.1 at 2018-08-25 14:26:11 -0500
+  [1m[35m (12.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (163.6ms)
+  Rendered users/new.html.erb within layouts/application (239.4ms)
+Completed 200 OK in 1284ms (Views: 1195.0ms | ActiveRecord: 29.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-08-25 14:26:41 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CbMTTJMlKAnf23lHtfUAoU0KBxOmsmpWBFwg97LxLdXFWiE59ybM1HW6lICt45xaV0YFdonJC2YNB2P314EFdw==", "user"=>{"CellPhone"=>"123", "Username"=>"abc", "Password"=>"[FILTERED]", "email"=>"aaaa", "FirstName"=>"", "LastName"=>"", "Avatar"=>"", "Points"=>""}, "commit"=>"Create User"}
+  [1m[35m (19.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (194.7ms)[0m  [1m[32mINSERT INTO "users" ("CellPhone", "Username", "Password", "email", "FirstName", "LastName", "Avatar", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["CellPhone", "123"], ["Username", "abc"], ["Password", "1234"], ["email", "aaaa"], ["FirstName", ""], ["LastName", ""], ["Avatar", ""], ["created_at", "2018-08-25 19:26:42.098263"], ["updated_at", "2018-08-25 19:26:42.098263"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (59.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 286ms (ActiveRecord: 274.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2018-08-25 14:26:42 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 225ms (Views: 159.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-25 14:26:44 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:22
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 145ms (Views: 127.8ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/2" for 127.0.0.1 at 2018-08-25 14:26:52 -0500
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tvP22a2AQyMp7aXlSVsmjDmgEQXkjmXVG8Hc718G1cn+rN1Wrx+jLiqeNl1h90UzZIaRKGCK2ZnYTEGHhP8ipw==", "id"=>"2"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:57
+  [1m[36mUser Destroy (11.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:57
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:57
+Redirected to http://localhost:3000/users
+Completed 302 Found in 27ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-25 14:26:52 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:22
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 164ms (Views: 145.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (108.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateProfiles (20180825192807)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (388.0ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "Name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825192807_create_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825192807"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825192921)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1080.1ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "user_id" bigint, "Profile_id" bigint, "UserCreatorId" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_87a6352e58"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_13be0cc5d7"
+FOREIGN KEY ("Profile_id")
+  REFERENCES "Profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825192921_create_user_profiles.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825193114)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (72.8ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "User_id" bigint, "Profile_id" bigint, "UserCreatorId" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4fbd31ecd1"
+FOREIGN KEY ("User_id")
+  REFERENCES "Users" ("id")
+, CONSTRAINT "fk_rails_13be0cc5d7"
+FOREIGN KEY ("Profile_id")
+  REFERENCES "Profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825193114_create_user_profiles.rb:3
+  [1m[35m (1.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825193737)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (124.7ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825193737_create_user_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825193737"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (55.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Started GET "/users/new" for 127.0.0.1 at 2018-08-25 14:38:28 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (35.9ms)
+  Rendered users/new.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 1202ms (Views: 1147.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-25 14:38:45 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:22
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 159ms (Views: 139.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/UserProfile" for 127.0.0.1 at 2018-08-25 14:38:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/UserProfile"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/User" for 127.0.0.1 at 2018-08-25 14:39:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/User"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/Users" for 127.0.0.1 at 2018-08-25 14:39:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Users"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/UserProfiles" for 127.0.0.1 at 2018-08-25 14:39:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/UserProfiles"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/Users" for 127.0.0.1 at 2018-08-25 14:40:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Users"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users" for 127.0.0.1 at 2018-08-25 14:40:41 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:22
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 139ms (Views: 120.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_profiles" for 127.0.0.1 at 2018-08-25 14:40:45 -0500
+Processing by UserProfilesController#index as HTML
+  Rendering user_profiles/index.html.erb within layouts/application
+  [1m[36mUserProfile Load (2.0ms)[0m  [1m[34mSELECT "user_profiles".* FROM "user_profiles"[0m
+  ↳ app/views/user_profiles/index.html.erb:14
+  Rendered user_profiles/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 145ms (Views: 118.4ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/user_profiles/new" for 127.0.0.1 at 2018-08-25 14:40:49 -0500
+Processing by UserProfilesController#new as HTML
+  Rendering user_profiles/new.html.erb within layouts/application
+  Rendered user_profiles/_form.html.erb (2.0ms)
+  Rendered user_profiles/new.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 161ms (Views: 133.7ms | ActiveRecord: 5.4ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825194554)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "User_id" bigint, "Profile_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4fbd31ecd1"
+FOREIGN KEY ("User_id")
+  REFERENCES "Users" ("id")
+, CONSTRAINT "fk_rails_13be0cc5d7"
+FOREIGN KEY ("Profile_id")
+  REFERENCES "Profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825194554_create_user_profiles.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825194554)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (109.7ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "User_id" bigint, "Profile_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4fbd31ecd1"
+FOREIGN KEY ("User_id")
+  REFERENCES "Users" ("id")
+, CONSTRAINT "fk_rails_13be0cc5d7"
+FOREIGN KEY ("Profile_id")
+  REFERENCES "Profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825194554_create_user_profiles.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825194740)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (56.8ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "User_id" bigint, "Profile_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4fbd31ecd1"
+FOREIGN KEY ("User_id")
+  REFERENCES "Users" ("id")
+, CONSTRAINT "fk_rails_13be0cc5d7"
+FOREIGN KEY ("Profile_id")
+  REFERENCES "Profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825194740_create_user_profiles.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825195007)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (214.4ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "User_id" bigint, "Profile_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_4fbd31ecd1"
+FOREIGN KEY ("User_id")
+  REFERENCES "Users" ("id")
+, CONSTRAINT "fk_rails_13be0cc5d7"
+FOREIGN KEY ("Profile_id")
+  REFERENCES "Profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825195007_create_user_profiles.rb:3
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825195336)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (158.7ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "user_id" bigint, "profile_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_87a6352e58"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_70afd642db"
+FOREIGN KEY ("profile_id")
+  REFERENCES "profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825195336_create_user_profiles.rb:3
+  [1m[35m (110.7ms)[0m  [1m[35mCREATE  INDEX  "index_user_profiles_on_user_id" ON "user_profiles"  ("user_id")[0m
+  ↳ db/migrate/20180825195336_create_user_profiles.rb:3
+  [1m[35m (29.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_profiles_on_profile_id" ON "user_profiles"  ("profile_id")[0m
+  ↳ db/migrate/20180825195336_create_user_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825195336"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825195511)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (83.8ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825195511_create_user_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825195511"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (105.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Started GET "/user_profiles/new" for 127.0.0.1 at 2018-08-25 14:56:19 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UserProfilesController#new as HTML
+  Rendering user_profiles/new.html.erb within layouts/application
+  Rendered user_profiles/_form.html.erb (23.9ms)
+  Rendered user_profiles/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 832ms (Views: 790.7ms | ActiveRecord: 5.0ms)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUserProfiles (20180825195800)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (103.8ms)[0m  [1m[35mCREATE TABLE "user_profiles" ("id" bigserial primary key, "UserCreatorId" integer, "user_id" bigint, "profile_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_87a6352e58"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_70afd642db"
+FOREIGN KEY ("profile_id")
+  REFERENCES "profiles" ("id")
+)[0m
+  ↳ db/migrate/20180825195800_create_user_profiles.rb:3
+  [1m[35m (126.7ms)[0m  [1m[35mCREATE  INDEX  "index_user_profiles_on_user_id" ON "user_profiles"  ("user_id")[0m
+  ↳ db/migrate/20180825195800_create_user_profiles.rb:3
+  [1m[35m (24.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_profiles_on_profile_id" ON "user_profiles"  ("profile_id")[0m
+  ↳ db/migrate/20180825195800_create_user_profiles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825195800"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (27.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Started GET "/user_profiles/new" for 127.0.0.1 at 2018-08-25 14:58:52 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by UserProfilesController#new as HTML
+  Rendering user_profiles/new.html.erb within layouts/application
+  Rendered user_profiles/_form.html.erb (45.9ms)
+  Rendered user_profiles/new.html.erb within layouts/application (74.8ms)
+Completed 200 OK in 942ms (Views: 829.4ms | ActiveRecord: 6.0ms)
+
+
