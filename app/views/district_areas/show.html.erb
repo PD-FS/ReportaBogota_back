@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @district_area.Name %>
+</p>
+
+<p>
+  <strong>Zipcodebegins:</strong>
+  <%= @district_area.ZipCodeBegins %>
+</p>
+
+<p>
+  <strong>Zipcodeends:</strong>
+  <%= @district_area.ZipCodeEnds %>
+</p>
+
+<%= link_to 'Edit', edit_district_area_path(@district_area) %> |
+<%= link_to 'Back', district_areas_path %>

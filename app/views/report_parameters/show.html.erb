@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @report_parameter.Name %>
+</p>
+
+<p>
+  <strong>Datatype:</strong>
+  <%= @report_parameter.DataType %>
+</p>
+
+<p>
+  <strong>Optional:</strong>
+  <%= @report_parameter.Optional %>
+</p>
+
+<p>
+  <strong>Htmlvisualization:</strong>
+  <%= @report_parameter.HtmlVisualization %>
+</p>
+
+<p>
+  <strong>Report type:</strong>
+  <%= @report_parameter.report_type %>
+</p>
+
+<%= link_to 'Edit', edit_report_parameter_path(@report_parameter) %> |
+<%= link_to 'Back', report_parameters_path %>

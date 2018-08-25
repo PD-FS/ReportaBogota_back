@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Longitude: 9.99
+  Latitude: 9.99
+  user: one
+  report_type: one
+
+two:
+  Longitude: 9.99
+  Latitude: 9.99
+  user: two
+  report_type: two

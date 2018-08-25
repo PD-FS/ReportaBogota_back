@@ -1,0 +1,42 @@
+<%= form_with(model: report_parameter_datum, local: true) do |form| %>
+  <% if report_parameter_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(report_parameter_datum.errors.count, "error") %> prohibited this report_parameter_datum from being saved:</h2>
+
+      <ul>
+      <% report_parameter_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Value %>
+    <%= form.text_field :Value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Longitude %>
+    <%= form.text_field :Longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latitude %>
+    <%= form.text_field :Latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_id %>
+    <%= form.text_field :report_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :report_parameter_id %>
+    <%= form.text_field :report_parameter_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
