@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  ZipCodeBegins: 1
+  ZipCodeEnds: 1
+
+two:
+  Name: MyString
+  ZipCodeBegins: 1
+  ZipCodeEnds: 1

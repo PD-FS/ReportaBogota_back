@@ -1,0 +1,2 @@
+class DistrictArea < ApplicationRecord
+end

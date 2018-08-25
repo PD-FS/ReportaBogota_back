@@ -766,3 +766,318 @@ Processing by UserProfilesController#new as HTML
 Completed 200 OK in 942ms (Views: 829.4ms | ActiveRecord: 6.0ms)
 
 
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateDistrictAreas (20180825200221)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (168.8ms)[0m  [1m[35mCREATE TABLE "district_areas" ("id" bigserial primary key, "Name" character varying, "ZipCodeBegins" integer, "ZipCodeEnds" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825200221_create_district_areas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825200221"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Started GET "/DistrictArea" for 127.0.0.1 at 2018-08-25 15:04:48 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/DistrictArea"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/DistrictAreas" for 127.0.0.1 at 2018-08-25 15:04:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/DistrictAreas"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/district_areas" for 127.0.0.1 at 2018-08-25 15:05:06 -0500
+Processing by DistrictAreasController#index as HTML
+  Rendering district_areas/index.html.erb within layouts/application
+  [1m[36mDistrictArea Load (1.0ms)[0m  [1m[34mSELECT "district_areas".* FROM "district_areas"[0m
+  ↳ app/views/district_areas/index.html.erb:16
+  Rendered district_areas/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 833ms (Views: 807.1ms | ActiveRecord: 5.0ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateUpzs (20180825200923)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (182.5ms)[0m  [1m[35mCREATE TABLE "upzs" ("id" bigserial primary key, "Name" character varying, "Georeference" text, "district_area_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_cbe4e675fd"
+FOREIGN KEY ("district_area_id")
+  REFERENCES "district_areas" ("id")
+)[0m
+  ↳ db/migrate/20180825200923_create_upzs.rb:3
+  [1m[35m (92.8ms)[0m  [1m[35mCREATE  INDEX  "index_upzs_on_district_area_id" ON "upzs"  ("district_area_id")[0m
+  ↳ db/migrate/20180825200923_create_upzs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825200923"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateReportCategories (20180825201023)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (84.8ms)[0m  [1m[35mCREATE TABLE "report_categories" ("id" bigserial primary key, "Name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825201023_create_report_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201023"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateReportTypes (20180825201037)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (142.6ms)[0m  [1m[35mCREATE TABLE "report_types" ("id" bigserial primary key, "Name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825201037_create_report_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201037"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateReports (20180825201233)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (103.7ms)[0m  [1m[35mCREATE TABLE "reports" ("id" bigserial primary key, "Longitude" decimal, "Latitude" decimal, "user_id" bigint, "report_type_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c7699d537d"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_d0ffedf8a4"
+FOREIGN KEY ("report_type_id")
+  REFERENCES "report_types" ("id")
+)[0m
+  ↳ db/migrate/20180825201233_create_reports.rb:3
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE  INDEX  "index_reports_on_user_id" ON "reports"  ("user_id")[0m
+  ↳ db/migrate/20180825201233_create_reports.rb:3
+  [1m[35m (29.9ms)[0m  [1m[35mCREATE  INDEX  "index_reports_on_report_type_id" ON "reports"  ("report_type_id")[0m
+  ↳ db/migrate/20180825201233_create_reports.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201233"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateReportParameters (20180825201430)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (286.3ms)[0m  [1m[35mCREATE TABLE "report_parameters" ("id" bigserial primary key, "Name" character varying, "DataType" character varying, "Optional" boolean, "HtmlVisualization" character varying, "report_type_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_136570bc4b"
+FOREIGN KEY ("report_type_id")
+  REFERENCES "report_types" ("id")
+)[0m
+  ↳ db/migrate/20180825201430_create_report_parameters.rb:3
+  [1m[35m (96.7ms)[0m  [1m[35mCREATE  INDEX  "index_report_parameters_on_report_type_id" ON "report_parameters"  ("report_type_id")[0m
+  ↳ db/migrate/20180825201430_create_report_parameters.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201430"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateReportParameterData (20180825201521)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (65.8ms)[0m  [1m[35mCREATE TABLE "report_parameter_data" ("id" bigserial primary key, "Value" character varying, "Longitude" decimal, "Latitude" decimal, "report_id" bigint, "report_parameter_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6e9bcd355b"
+FOREIGN KEY ("report_id")
+  REFERENCES "reports" ("id")
+, CONSTRAINT "fk_rails_45ddbbace3"
+FOREIGN KEY ("report_parameter_id")
+  REFERENCES "report_parameters" ("id")
+)[0m
+  ↳ db/migrate/20180825201521_create_report_parameter_data.rb:3
+  [1m[35m (48.9ms)[0m  [1m[35mCREATE  INDEX  "index_report_parameter_data_on_report_id" ON "report_parameter_data"  ("report_id")[0m
+  ↳ db/migrate/20180825201521_create_report_parameter_data.rb:3
+  [1m[35m (31.9ms)[0m  [1m[35mCREATE  INDEX  "index_report_parameter_data_on_report_parameter_id" ON "report_parameter_data"  ("report_parameter_id")[0m
+  ↳ db/migrate/20180825201521_create_report_parameter_data.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201521"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateBusinessTypes (20180825201726)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (80.8ms)[0m  [1m[35mCREATE TABLE "business_types" ("id" bigserial primary key, "Name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825201726_create_business_types.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201726"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateCompanies (20180825201829)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (143.6ms)[0m  [1m[35mCREATE TABLE "companies" ("id" bigserial primary key, "Name" character varying, "business_type_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_8dbefc7eb6"
+FOREIGN KEY ("business_type_id")
+  REFERENCES "business_types" ("id")
+)[0m
+  ↳ db/migrate/20180825201829_create_companies.rb:3
+  [1m[35m (66.8ms)[0m  [1m[35mCREATE  INDEX  "index_companies_on_business_type_id" ON "companies"  ("business_type_id")[0m
+  ↳ db/migrate/20180825201829_create_companies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201829"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateCategories (20180825201947)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (70.8ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "Name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825201947_create_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825201947"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateCompanyReportCategories (20180825202003)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (41.9ms)[0m  [1m[35mCREATE TABLE "company_report_categories" ("id" bigserial primary key, "category_id" bigint, "company_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_aee5d18c5a"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_0adda37524"
+FOREIGN KEY ("company_id")
+  REFERENCES "companies" ("id")
+)[0m
+  ↳ db/migrate/20180825202003_create_company_report_categories.rb:3
+  [1m[35m (21.9ms)[0m  [1m[35mCREATE  INDEX  "index_company_report_categories_on_category_id" ON "company_report_categories"  ("category_id")[0m
+  ↳ db/migrate/20180825202003_create_company_report_categories.rb:3
+  [1m[35m (53.9ms)[0m  [1m[35mCREATE  INDEX  "index_company_report_categories_on_company_id" ON "company_report_categories"  ("company_id")[0m
+  ↳ db/migrate/20180825202003_create_company_report_categories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825202003"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateProducts (20180825202056)
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (80.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "Name" character varying, "Description" text, "PointsToRedeem" integer, "Enabled" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180825202056_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825202056"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+Migrating to CreateRedeems (20180825202119)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (36.9ms)[0m  [1m[35mCREATE TABLE "redeems" ("id" bigserial primary key, "user_id" bigint, "product_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_edb6d10a6a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_bf60298772"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20180825202119_create_redeems.rb:3
+  [1m[35m (27.9ms)[0m  [1m[35mCREATE  INDEX  "index_redeems_on_user_id" ON "redeems"  ("user_id")[0m
+  ↳ db/migrate/20180825202119_create_redeems.rb:3
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE  INDEX  "index_redeems_on_product_id" ON "redeems"  ("product_id")[0m
+  ↳ db/migrate/20180825202119_create_redeems.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180825202119"]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(5880326111628337425)[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/RailsInstaller/Ruby2.3.3/bin/rake:22

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Description: MyText
+  PointsToRedeem: 1
+  Enabled: false
+
+two:
+  Name: MyString
+  Description: MyText
+  PointsToRedeem: 1
+  Enabled: false

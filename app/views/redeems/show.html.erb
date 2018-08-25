@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @redeem.user %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @redeem.product %>
+</p>
+
+<%= link_to 'Edit', edit_redeem_path(@redeem) %> |
+<%= link_to 'Back', redeems_path %>

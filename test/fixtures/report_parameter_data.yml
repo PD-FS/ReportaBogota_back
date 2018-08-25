@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Value: MyString
+  Longitude: 9.99
+  Latitude: 9.99
+  report: one
+  report_parameter: one
+
+two:
+  Value: MyString
+  Longitude: 9.99
+  Latitude: 9.99
+  report: two
+  report_parameter: two

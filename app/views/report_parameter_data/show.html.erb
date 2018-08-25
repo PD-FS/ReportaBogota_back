@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @report_parameter_datum.Value %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @report_parameter_datum.Longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @report_parameter_datum.Latitude %>
+</p>
+
+<p>
+  <strong>Report:</strong>
+  <%= @report_parameter_datum.report %>
+</p>
+
+<p>
+  <strong>Report parameter:</strong>
+  <%= @report_parameter_datum.report_parameter %>
+</p>
+
+<%= link_to 'Edit', edit_report_parameter_datum_path(@report_parameter_datum) %> |
+<%= link_to 'Back', report_parameter_data_path %>

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Report Parameter Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Report</th>
+      <th>Report parameter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @report_parameter_data.each do |report_parameter_datum| %>
+      <tr>
+        <td><%= report_parameter_datum.Value %></td>
+        <td><%= report_parameter_datum.Longitude %></td>
+        <td><%= report_parameter_datum.Latitude %></td>
+        <td><%= report_parameter_datum.report %></td>
+        <td><%= report_parameter_datum.report_parameter %></td>
+        <td><%= link_to 'Show', report_parameter_datum %></td>
+        <td><%= link_to 'Edit', edit_report_parameter_datum_path(report_parameter_datum) %></td>
+        <td><%= link_to 'Destroy', report_parameter_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report Parameter Datum', new_report_parameter_datum_path %>

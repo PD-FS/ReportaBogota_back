@@ -1,0 +1,32 @@
+<%= form_with(model: district_area, local: true) do |form| %>
+  <% if district_area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(district_area.errors.count, "error") %> prohibited this district_area from being saved:</h2>
+
+      <ul>
+      <% district_area.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ZipCodeBegins %>
+    <%= form.number_field :ZipCodeBegins %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ZipCodeEnds %>
+    <%= form.number_field :ZipCodeEnds %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

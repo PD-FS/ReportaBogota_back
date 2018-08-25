@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Report Parameters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Datatype</th>
+      <th>Optional</th>
+      <th>Htmlvisualization</th>
+      <th>Report type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @report_parameters.each do |report_parameter| %>
+      <tr>
+        <td><%= report_parameter.Name %></td>
+        <td><%= report_parameter.DataType %></td>
+        <td><%= report_parameter.Optional %></td>
+        <td><%= report_parameter.HtmlVisualization %></td>
+        <td><%= report_parameter.report_type %></td>
+        <td><%= link_to 'Show', report_parameter %></td>
+        <td><%= link_to 'Edit', edit_report_parameter_path(report_parameter) %></td>
+        <td><%= link_to 'Destroy', report_parameter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Report Parameter', new_report_parameter_path %>

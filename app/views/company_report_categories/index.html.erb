@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Company Report Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Company</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @company_report_categories.each do |company_report_category| %>
+      <tr>
+        <td><%= company_report_category.category %></td>
+        <td><%= company_report_category.company %></td>
+        <td><%= link_to 'Show', company_report_category %></td>
+        <td><%= link_to 'Edit', edit_company_report_category_path(company_report_category) %></td>
+        <td><%= link_to 'Destroy', company_report_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Company Report Category', new_company_report_category_path %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>District Areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Zipcodebegins</th>
+      <th>Zipcodeends</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @district_areas.each do |district_area| %>
+      <tr>
+        <td><%= district_area.Name %></td>
+        <td><%= district_area.ZipCodeBegins %></td>
+        <td><%= district_area.ZipCodeEnds %></td>
+        <td><%= link_to 'Show', district_area %></td>
+        <td><%= link_to 'Edit', edit_district_area_path(district_area) %></td>
+        <td><%= link_to 'Destroy', district_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New District Area', new_district_area_path %>
