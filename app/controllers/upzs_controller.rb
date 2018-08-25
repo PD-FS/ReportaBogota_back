@@ -1,4 +1,4 @@
-class UpZsController < ApplicationController
+class UpzsController < ApplicationController
   before_action :set_upz, only: [:show, :edit, :update, :destroy]
 
   # GET /upzs

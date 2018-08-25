@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :upzs
   resources :redeems
   resources :products
   resources :company_report_categories
@@ -10,7 +11,6 @@ Rails.application.routes.draw do
   resources :reports
   resources :report_types
   resources :report_categories
-  resources :upzs
   resources :district_areas
   resources :user_profiles
   resources :profiles

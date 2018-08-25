@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UpZsControllerTest < ActionDispatch::IntegrationTest
+class UpzsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @upz = upzs(:one)
   end
